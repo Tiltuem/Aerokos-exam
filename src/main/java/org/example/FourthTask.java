@@ -2,18 +2,18 @@ package org.example;
 
 /*
 Найти среднее арифметическое всex элементов,
-находящихся одновременно справа от побочной и главной диагонали целочисленной квадратной матрицы (включаая диагонали).
+находящихся одновременно справа от побочной и главной диагонали целочисленной квадратной матрицы.
 */
-public class ThirdTask {
+public class FourthTask {
     public static void main(String[] args) {
-        // 4, 7, 8, 11, 12, 16
+        // 8, 12
         int[][] matrix = {
                 {1, 2, 3, 4},
                 {5, 6, 7, 8},
                 {9, 10, 11, 12},
                 {13, 14, 15, 16}};
 
-        // 4, 8, 8, 11, 12, 12, 16, 16, 20
+        // 8, 12, 12, 16
         int[][] matrix2 = {
                 {1, 2, 3, 4, 4},
                 {5, 6, 7, 8, 8},
@@ -21,7 +21,7 @@ public class ThirdTask {
                 {13, 14, 15, 16, 16},
                 {17, 18, 19, 20, 20}};
 
-        // 5, 8, 9, 12, 12, 13, 16, 16, 17, 16, 17, 20
+        // 9, 13, 12, 17, 16, 17, 17
         int[][] matrix3 = {
                 {1, 2, 3, 4, 4, 5},
                 {5, 6, 7, 8, 8, 9},
@@ -30,17 +30,17 @@ public class ThirdTask {
                 {13, 14, 15, 16, 16, 17},
                 {17, 18, 19, 20, 20, 20}};
 
-        System.out.println(averageLeftOfDiagonals(matrix3));
+        System.out.println(averageLeftOfDiagonals(matrix));
     }
 
 
     public static double averageLeftOfDiagonals(int[][] matrix) {
         double sum = 0;
         int count = 0;
-        int row = 0, column = matrix.length - 1, temp = matrix.length - 1, length = matrix.length;
+        int row = 1, column = matrix.length - 1, temp = matrix.length - 2, length = matrix.length;
 
         while (row < length) {
-            while (column >= temp) {
+            while (column > temp) {
                 sum += matrix[row][column];
                 System.out.println(matrix[row][column]);
                 count++;
