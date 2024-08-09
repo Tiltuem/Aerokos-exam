@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Task14 {
     public static void main(String[] args) {
-        int[] test = new int[]{1, 3, 5, 2, 4, 5};
+        int[] test = new int[]{1, 3, 5, 2, 4, 0, 6, 5};
         System.out.println(findLargestSeq(test));
     }
     public static List<Integer> findLargestSeq(int[] data) {
@@ -17,7 +17,8 @@ public class Task14 {
 
         for (int i = 0; i != data.length; i++) {
             for (int j = i; j != data.length; j++) {
-                int index = getIndexOfMinEl(Arrays.copyOfRange(data, j, data.length));
+                int last = temp.size() > 0 ? temp.getLast() : 0;
+                int index = getIndexOfMinElBetterThan(Arrays.copyOfRange(data, j, data.length), last);
                 index += j;
                 temp.add(data[index]);
                 j = index;
@@ -29,15 +30,17 @@ public class Task14 {
         return map.get(map.lastKey());
     }
 
-    public static int getIndexOfMinEl(int[] arr) {
+    public static int getIndexOfMinElBetterThan(int[] arr, int betterThanThis) {
         if (arr == null || arr.length == 0) {
             return -1; // Обработка пустого или null массива
         }
 
         int minIndex = 0; // Предполагаем, что первый элемент минимальный
         for (int i = 1; i < arr.length; i++) {
-            if (arr[i] < arr[minIndex]) {
-                minIndex = i;
+            if (arr[i] > betterThanThis) {
+                if (arr[i] < arr[minIndex]) {
+                    minIndex = i;
+                }
             }
         }
         return minIndex;
