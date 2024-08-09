@@ -15,11 +15,11 @@ public class Task15 {
         int[] arr = {7, 5, 8, 8, 1, 5, 7, 10};
         int[] arr2 = {7, 5, 8, 8, 7, 5};
         int[] arr3= {7, 5};
-        int[] arr4= {7,5,8,5,7};
+        int[] arr4= {1,2,3,4, 100};
 
         //test(arr);
 
-        Arrays.sort(arr4);
+        //Arrays.sort(arr4);
         test(arr4);
         minDiffSubArray(arr4);
     }
@@ -91,6 +91,10 @@ public class Task15 {
 
             difference = curDifference;
             index++;
+        }
+
+        if (index == arr.length) {
+            index--;
         }
 
         int[] firstArr = Arrays.copyOfRange(arr, 0, index);

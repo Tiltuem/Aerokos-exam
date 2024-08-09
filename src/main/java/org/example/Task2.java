@@ -35,21 +35,17 @@ public class Task2 {
         System.out.println(averageLeftOfDiagonals(matrix3));
     }
 
-
     public static double averageLeftOfDiagonals(int[][] matrix) {
         double sum = 0;
-        int count = 0;
-        int row = 1, column = 0, temp = 1, length = matrix.length;
+        int count = 0, row = 1, column = 0, temp = 1, length = matrix.length;
 
         while (row < length - 1) {
-            while (column < temp) {
-                sum += matrix[row][column];
-                System.out.println(matrix[row][column]);
+            for (int i = column; i < temp; i++) {
+                sum += matrix[row][i];
+                System.out.println(matrix[row][i]);
                 count++;
-                column++;
             }
             row++;
-            column = 0;
             temp = row < length / 2 ? row : length - row - 1;
         }
 
