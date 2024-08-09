@@ -30,9 +30,7 @@ public class Task1 {
         }
         if (counter + 1 < minSeq && counter + 1 >= 2) {
             counter++;
-            minSeq = counter;
             result = i - counter;
-            counter = 0;
         }
 
         return result;
