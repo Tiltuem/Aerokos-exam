@@ -16,7 +16,7 @@ public class Task8 {
         System.out.println(findMedianInRealArr(test2));
     }
     public static double findMedianInRealArr(double[] arr) {
-        Arrays.sort(arr);
+        //Arrays.sort(arr); Можно использовать, лучше уточнить
         quickSort(arr, 0, arr.length - 1);
         int i = (arr.length - 1) / 2;
         return arr.length % 2 == 0 ? (arr[i] + arr[i + 1]) / 2 : arr[i];
