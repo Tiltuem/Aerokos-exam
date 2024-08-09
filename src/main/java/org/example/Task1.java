@@ -4,7 +4,7 @@ package org.example;
 * Найти индекс начала наиболее короткой (не менее двух) и непрерывной последовательности
 * одинаковых чисел в целочисленном массиве
 * */
-public class FirstTask {
+public class Task1 {
     public static void main(String[] args) {
         int[] test = new int[]{1, 4, 7, 3, 3, 3, 3, 2, 2, 1, 1};
         System.out.println(findIndexOfLowestSeq(test));

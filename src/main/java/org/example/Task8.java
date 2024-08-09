@@ -8,7 +8,7 @@ import java.util.Arrays;
  * взять средний элемент, а в случае четного количества членов взять среднее
  * арифметическое между двумя "средними" членами.
  */
-public class EighthTask {
+public class Task8 {
     public static void main(String[] args) {
         double[] test1 = new double[]{1.5, 3.2, 2.7, 4.1, 2.9};
         double[] test2 = new double[]{1.5, 3.2, 2.7, 4.1};

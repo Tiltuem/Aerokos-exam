@@ -15,7 +15,7 @@ class Node {
         this.next = null;
     }
 }
-public class TwelfthTask {
+public class Task12 {
     public static void main(String[] args) {
         Node test1 = new Node(1);
         test1.next = new Node(2);

@@ -4,7 +4,7 @@ package org.example;
 Развернуть квадратную матрицу в одномерный массив по "улитке" против часовой стрелки, начиная с левого верхнего угла матрицы
 */
 
-public class ThirteenthTask13 {
+public class Task13 {
     public static void main(String[] args) {
         int[][] matrix = {
                 {1, 2, 3, 4},

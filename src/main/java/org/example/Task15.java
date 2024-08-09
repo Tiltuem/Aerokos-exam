@@ -10,7 +10,7 @@ import java.util.Map;
  * элементов двух получившихся массивов была мнимальна
  */
 
-public class FifteenTask {
+public class Task15 {
     public static void main(String[] args) {
         int[] arr = { 7,5,8,5,7 };
         Arrays.sort(arr);
