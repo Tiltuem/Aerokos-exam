@@ -29,9 +29,7 @@ public class Task5 {
         }
         if (counter + 1 > maxSeq && counter + 1 >= 2) {
             counter++;
-            maxSeq = counter;
             result = i - counter;
-            counter = 0;
         }
 
         return result;
