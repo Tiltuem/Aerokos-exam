@@ -1,9 +1,10 @@
 package org.example;
 
-/*
+/**
  * Найти индекс начала наиболее длинной непрерывной последовательности
  * одинаковых чисел в целочисленном массиве
- * */
+ */
+
 public class Task5 {
     public static void main(String[] args) {
         int[] test = new int[]{1, 4, 7, 3, 3, 3, 3, 1, 4, 2, 2, 2, 2};
