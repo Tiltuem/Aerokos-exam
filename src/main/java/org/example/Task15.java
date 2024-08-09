@@ -12,17 +12,24 @@ import java.util.Map;
 
 public class Task15 {
     public static void main(String[] args) {
-        int[] arr = { 7,5,8,5,7 };
-        Arrays.sort(arr);
-        minDiffSubArray(arr);
+        int[] arr = {7, 5, 8, 8, 1, 5, 7, 10};
+        int[] arr2 = {7, 5, 8, 8, 7, 5};
+        int[] arr3= {7, 5};
+        int[] arr4= {7,5,8,5,7};
+
+        //test(arr);
+
+        Arrays.sort(arr4);
+        test(arr4);
+        minDiffSubArray(arr4);
     }
-    public static void minDiffSubArray(int[] arr)
-    {
+
+    public static void minDiffSubArray(int[] arr) {
         int n = arr.length;
         int[] prefixSum = new int[n];
         prefixSum[0] = arr[0];
         int[] arr1 = new int[n];
-        arr1[0] =  arr[0];
+        arr1[0] = arr[0];
         Map<Integer, int[]> res1 = new HashMap<>();
         for (int i = 1, i1 = 1; i < n; i++) {
             arr1[i1++] = arr[i];
@@ -63,5 +70,34 @@ public class Task15 {
         System.out.println(Arrays.toString(res1.get(minPref)));
         System.out.println(Arrays.toString(res2.get(minSuff)));
 
+    }
+
+
+    public static void test(int[] arr) {
+        if (arr.length < 2) {
+            return;
+        }
+
+        double sum = Arrays.stream(arr).sum(), curSum = 0, difference = Double.MAX_VALUE, curDifference;
+        int index = 0;
+
+        for (int num : arr) {
+            curSum += num;
+            curDifference = Math.abs(1 - (sum - curSum) / curSum);
+
+            if (difference < curDifference) {
+                break;
+            }
+
+            difference = curDifference;
+            index++;
+        }
+
+        int[] firstArr = Arrays.copyOfRange(arr, 0, index);
+        int[] secondArr = Arrays.copyOfRange(arr, index, arr.length);
+
+        System.out.println(Arrays.toString(firstArr));
+        System.out.println(Arrays.toString(secondArr));
+        System.out.println( Math.abs(Arrays.stream(firstArr).sum() - Arrays.stream(secondArr).sum()));
     }
 }
